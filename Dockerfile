@@ -9,5 +9,8 @@ RUN envsubst '$NODE_ROOT' < /tmp/app.nginx > /etc/nginx/conf.d/default.conf
 
 CMD [ "nginx", "-g", "daemon off;" ]
 
+COPY ./certs /etc/nginx/certs
+
+EXPOSE 80
 #docker build -t proxy_frontmaaia .
 #docker run -p 80:80 proxy_frontmaaia
